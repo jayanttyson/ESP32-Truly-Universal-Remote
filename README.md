@@ -1,7 +1,8 @@
 # ESP32-Truly-Universal-Remote
 ESP32-based universal remote control with IR, Bluetooth, and OLED display capabilities.
 # Domninus Scepter: ESP32 IR/Bluetooth Remote Control
-![Uploading image.png…]()
+<img width="3000" height="4000" alt="image" src="https://github.com/user-attachments/assets/32203d06-d468-45f8-ba30-a9eb29805c4d" />
+
 
 **Domninus Scepter** is a versatile ESP32-based IR/Bluetooth remote control system designed to control infrared devices such as TVs, air conditioners (ACs), and speakers, with additional Bluetooth keyboard functionality for media control. It features an OLED display for user interaction, a rotary encoder for navigation, and persistent storage for IR codes. The project supports a wide range of IR protocols and includes deep sleep for power efficiency.
 
