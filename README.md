@@ -32,6 +32,7 @@ ESP32-based universal remote control with IR, Bluetooth, and OLED display capabi
 - **Debug LED**: GPIO 2 {inbuild LED}/(optional, for visual feedback)
 - 2N2222 General Purpose Transistor for IR LED
 - 5v voltage regulator for powering the ESP32 with a stable Voltage
+- 0.1uf Ceramic Capacitor at GPIO34 to GND for signal filtering (highly recomended)
 
 ## Software Requirements
 - **Arduino IDE** (2.x recommended)
