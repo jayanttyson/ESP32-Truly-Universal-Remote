@@ -153,38 +153,4 @@ LicenseThis project is licensed under the MIT License. See the LICENSE file for 
 Adafruit_SSD1306 for OLED display drivers.
 NimBLE-Arduino and BleKeyboard for Bluetooth functionality.
 
-### Customization Notes
-- **Repository URL**: Replace `https://github.com/yourusername/domninus-scepter.git` with your actual GitHub repository URL.
-- **License**: The `README.md` assumes an MIT License. If you prefer another license (e.g., GPL), update the License section and include the appropriate `LICENSE` file in your repository.
-- **Project Name**: The name "Domninus Scepter" is taken from the Bluetooth device name in the sketch. If you want a different name, update it in the `README.md` and sketch (`BT_DEVICE_NAME`).
-- **Additional Sections**: If you have specific hardware (e.g., exact ESP32 model) or additional features (e.g., custom protocols), add them to the Features or Hardware Requirements sections.
-- **Images/Diagrams**: Consider adding a `docs/` folder with wiring diagrams or screenshots (e.g., OLED menu) and link them in the `README.md` using `![Image Description](docs/image.png)`.
 
-### Setup Instructions for GitHub
-1. **Create a Repository**:
-   - Go to [GitHub](https://github.com), sign in, and click "New repository".
-   - Name it (e.g., `domninus-scepter`), add a description, and initialize with a `README.md`.
-2. **Add the `README.md`**:
-   - Copy the above content into the `README.md` file in your repository.
-   - Alternatively, create a local file, add it to your project folder, and push it:
-     ```bash
-     git add README.md
-     git commit -m "Add README.md"
-     git push origin main
-     ```
-3. **Add the Sketch**:
-   - Place `domninus_scepter.ino` in the repository’s root or a `src/` folder.
-   - Push the sketch:
-     ```bash
-     git add domninus_scepter.ino
-     git commit -m "Add main sketch"
-     git push origin main
-     ```
-4. **Optional: Add License**:
-   - Create a `LICENSE` file with the MIT License text (available from [choosealicense.com](https://choosealicense.com/licenses/mit/)).
-   - Commit and push:
-     ```bash
-     git add LICENSE
-     git commit -m "Add MIT License"
-     git push origin main
-     ```
