@@ -44,7 +44,7 @@ ESP32-based universal remote control with IR, Bluetooth, and OLED display capabi
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone [https://github.com/jayanttyson/ESP32-Truly-Universal-Remote].git
+   git clone https://github.com/jayanttyson/ESP32-Truly-Universal-Remote.git
 Install Arduino IDE:Download and install from arduino.cc.
 
 Install ESP32 Board Support:In Arduino IDE, go to File > Preferences, add the following to Additional Boards Manager URLs:
