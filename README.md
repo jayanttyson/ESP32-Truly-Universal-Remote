@@ -43,3 +43,75 @@ ESP32-based universal remote control with IR, Bluetooth, and OLED display capabi
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/yourusername/domninus-scepter.git
+Install Arduino IDE:Download and install from arduino.cc.
+
+Install ESP32 Board Support:In Arduino IDE, go to File > Preferences, add the following to Additional Boards Manager URLs:
+
+https://raw.githubusercontent.com/espressif/arduino-esp32/master/package_esp32_index.json
+
+Go to Tools > Board > Boards Manager, search for esp32, and install.
+
+Install Libraries:In Arduino IDE, go to Sketch > Include Library > Manage Libraries.
+Install IRremoteESP8266 (v2.8.2+), Adafruit_SSD1306, NimBLE-Arduino, and BleKeyboard.
+
+Open the Sketch:Open domninus_scepter.ino from the cloned repository in Arduino IDE.
+
+Configure and Upload:Select your ESP32 board under Tools > Board (e.g., ESP32 Dev Module).
+Connect the ESP32 via USB, select the correct port under Tools > Port.
+Upload the sketch (Sketch > Upload).
+
+UsagePower On:Connect the ESP32 to a power source (e.g., battery or USB).
+The OLED displays the menu with available profiles: TV, AC, SPK, AC_X, BT.
+
+Navigate Profiles:Rotate the encoder to highlight a profile.
+Press the encoder button to select the profile or toggle between menu and control mode.
+
+Record IR Commands:In control mode, press the REC button (GPIO 5) to enter record mode (REC appears on OLED).
+Point the target remote at the IR receiver and press a button.
+If successful, the OLED shows "Signal captured! Press BTN1/2/3/4 to save".
+Press a button (1-4) to save the IR code to that button for the current profile.
+
+Send IR Commands:In control mode, press BTN1, BTN2, BTN3, or BTN4 to send the saved IR command.
+For AC profiles (AC, AC_X), supports protocols like Coolix, Daikin, etc.
+For TV/SPK, supports NEC, Sony, etc., or raw IR codes.
+
+Bluetooth Mode:Select the BT profile.
+Pair with a device (Android/Windows) via Bluetooth settings (device name: Domninus Scepter).
+Use BTN1 (Play/Pause), BTN2 (Volume Up), BTN3 (Mute), BTN4 (Volume Down).
+Press REC to switch between Android and Windows profiles.
+
+Battery Monitoring:Battery percentage is displayed on the OLED, updated every 30 seconds.
+
+Deep Sleep:The device enters deep sleep after 15 seconds of inactivity to save power.
+Wake by pressing the encoder button (GPIO 27).
+
+DebuggingEnable Debug Mode:Uncomment #define DEBUG in the sketch to enable serial output at 115200 baud.
+Open the Serial Monitor (Tools > Serial Monitor) to view logs, including:IR capture details (protocol, value, raw timings).
+Profile load/save status.
+Bluetooth connection status.
+
+Common Issues:IR Commands Not Working:Ensure IRremoteESP8266 is v2.8.2 or higher (older versions may cause compilation errors).
+Check IR receiver/emitter wiring (GPIO 15 for receiver, GPIO 4 for emitter).
+Verify the IR code was captured and saved (check Serial Monitor for Saved AC ... or Saved ...).
+
+Compilation Errors:If enableIRIn() errors occur, update IRremoteESP8266 to v2.8.2+ or use the provided modified sketch for older versions.
+Ensure all libraries are installed and up-to-date.
+
+Bluetooth Issues:Reset BLE by pressing REC in BT profile to restart advertising.
+Check Serial Monitor for Bluetooth initialized or BT Not Connected!.
+
+Timer Errors (gptimer_register_to_group):Ensure irrecv.disableIRIn() is called before irsend operations (handled in the sketch).
+If persistent, disable BLE temporarily to isolate conflicts.
+
+Profile Persistence:If profiles don’t save, clear NVS with a sketch like:
+
+#include <Preferences.h>
+void setup() {
+  Preferences prefs;
+  prefs.begin("IRRemote", false);
+  prefs.clear();
+  prefs.end();
+  Serial.begin(115200);
+  Serial.println("NVS cleared");
+}
+void loop() {}
