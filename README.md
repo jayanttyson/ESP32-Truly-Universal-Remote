@@ -26,8 +26,10 @@ ESP32-based universal remote control with IR, Bluetooth, and OLED display capabi
   - BTN3 (Mute): GPIO 13
   - BTN4 (Volume Down): GPIO 12
   - REC (Device Switch/Record): GPIO 5
-- **Battery Monitoring**: Voltage divider connected to GPIO 34
-- **Debug LED**: GPIO 2 (optional, for visual feedback)
+- **Battery Monitoring**: Voltage divider connected to GPIO 34, used 2 x 1MΩ for Minimum Battery Drainage
+- **Debug LED**: GPIO 2 {inbuild LED}/(optional, for visual feedback)
+- 2N2222 General Purpose Transistor for IR LED
+- 5v voltage regulator for powering the ESP32 with a stable Voltage
 
 ## Software Requirements
 - **Arduino IDE** (2.x recommended)
