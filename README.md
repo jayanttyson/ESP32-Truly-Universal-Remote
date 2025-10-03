@@ -186,11 +186,3 @@ NimBLE-Arduino and BleKeyboard for Bluetooth functionality.
      git commit -m "Add MIT License"
      git push origin main
      ```
-
-### Testing the README
-- After pushing to GitHub, view the `README.md` on your repository page to ensure formatting is correct (e.g., headers, lists, code blocks).
-- Test all links (e.g., library GitHub pages) to confirm they work.
-- If you add images or diagrams, verify they display correctly by linking them in the `README.md`.
-
-This `README.md` provides a clear, professional guide for users to set up and use your project. If you need help with specific sections, want to add a wiring diagram, or need assistance setting up the GitHub repository, let me know!
-
