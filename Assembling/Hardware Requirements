@@ -1,0 +1,34 @@
+Hardware Requirements:
+
+ESP32 Type-C (30-pin): Main microcontroller (e.g., ESP32 DevKitC).
+
+TP4056 Type-C Charging Board: For charging the 18650 battery.
+
+3.7V 18650 Li-ion Battery: Power source.
+
+SSD1306 0.96" OLED Display (128x64): I2C interface for UI.
+
+M274 Rotary Encoder (KY-040): For menu navigation and selection.
+
+3.7V to 12V DC-DC Boost Converter: Set to 5V output to power the ESP32 and components
+
+2-Pin Mini Rocker Switch: Power switch for the circuit.
+
+Tactile Push Buttons (12mm, x5): For Play/Pause, Volume Up, Mute, Volume Down, and Record/Device Switch.
+
+IR LED: For transmitting IR signals.
+
+IR Receiver: For capturing IR codes (e.g., TSOP series).
+
+Resistors:20Ω: Current limiting for IR LED.
+
+1MΩ (x2): Voltage divider for battery monitoring.
+
+330Ω: For 2N2222 transistor base.
+
+0.1µF Ceramic Capacitor: For signal filtering (e.g., IR receiver).
+
+2N2222 NPN Transistor: Drives the IR LED.
+
+Wires: For connections.
+
