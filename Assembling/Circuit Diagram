@@ -1,7 +1,3 @@
-Below is an ASCII schematic of the circuit
-
-
-
 +------------------------------------+
 |          3.7V 18650 Battery        |
 |       +         |          -       |
@@ -28,25 +24,26 @@ Below is an ASCII schematic of the circuit
 +------------------+     |           |
 |       ESP32      |     |           |
 |       [5V]-------|-----|-----------+
-|       [GND]------|-----+-----------+ GND
-|       [GPIO 21]------------------[SDA] SSD1306 OLED
-|       [GPIO 22]------------------[SCL]     [VCC]---[5V]
-|       [GPIO 25]------------------[CLK] Rotary Encoder
-|       [GPIO 26]------------------[DT]      [VCC]---[5V]
-|       [GPIO 27]------------------[SW]      [GND]---[GND]
-|       [GPIO 33]------------------[BTN1] Tactile Button
-|       [GPIO 32]------------------[BTN2]    [GND]---[GND]
-|       [GPIO 13]------------------[BTN3]
-|       [GPIO 12]------------------[BTN4]
-|       [GPIO 5]-------------------[BTN5]
-|       [GPIO 4]---[330Ω]---[B] 2N2222
-|                         [C]---[20Ω]---[IR LED]---[GND]
-|                         [E]---[GND]
-|       [GPIO 15]------------------[OUT] IR Receiver
-|                                 [VCC]---[5V]
-|                                 [GND]---[GND]
-|       [GPIO 34]------------------[Voltage Divider]
-|                                 [1MΩ]---[GND]
-|                                 [1MΩ]---[Battery +]
-|       [GPIO 2]-------------------[Onboard LED]
+|       [3.3V]---[OLED, Encoder, IR LED]
+|       [GND]-----|-----+-----------+ GND
+|       [GPIO 21]-----------------[SDA] SSD1306 OLED
+|       [GPIO 22]-----------------[SCL]     [VCC]---[3.3V]
+|       [GPIO 25]-----------------[CLK] Rotary Encoder
+|       [GPIO 26]-----------------[DT]      [VCC]---[3.3V]
+|       [GPIO 27]-----------------[SW]      [GND]---[GND]
+|       [GPIO 33]-----------------[BTN1] Tactile Button
+|       [GPIO 32]-----------------[BTN2]    [GND]---[GND]
+|       [GPIO 13]-----------------[BTN3]
+|       [GPIO 12]-----------------[BTN4]
+|       [GPIO 5]------------------[BTN5]
+|       [GPIO 4]--[330Ω]---[B] 2N2222
+|                        [C]--[20Ω]--[IR LED]--[3.3V]
+|                        [E]--[GND]
+|       [GPIO 15]-----------------[OUT] IR Receiver
+|                                [VCC]---[5V] (*See Note)
+|                                [GND]---[GND]
+|       [GPIO 34]-----------------[Voltage Divider]
+|                                [1MΩ]---[GND]
+|                                [1MΩ]---[Battery +]
+|       [GPIO 2]------------------[Onboard LED]
 +------------------------------------+
