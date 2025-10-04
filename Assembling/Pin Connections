@@ -1,0 +1,16 @@
+ESP32:GPIO 21: OLED SDA
+GPIO 22: OLED SCL
+GPIO 25: Rotary Encoder CLK
+GPIO 26: Rotary Encoder DT
+GPIO 27: Rotary Encoder SW
+GPIO 33: Button 1 (Play/Pause)
+GPIO 32: Button 2 (Volume Up)
+GPIO 13: Button 3 (Mute)
+GPIO 12: Button 4 (Volume Down)
+GPIO 5: Button 5 (Record/Device Switch)
+GPIO 4: IR LED (via 2N2222)
+GPIO 15: IR Receiver OUT
+GPIO 34: Battery voltage (via voltage divider)
+GPIO 2: Debug LED (onboard)
+5V, GND: From DC-DC boost converter
+
