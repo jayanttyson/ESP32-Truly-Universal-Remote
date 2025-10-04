@@ -1,0 +1,19 @@
+Here are some photos on how the project was assembled.
+PARTS USED
+1.ESP32 type C 30 pin type
+2.TP4056 type C chaging Board
+3.3.7V 18650 Cell Li-ion Rechargeable Battery
+4.SSD1306 0.96inch 128x64 OLED Display Module
+5.M274 360 Degrees Rotary Encoder Module Brick Sensor Switch Development KY-040
+6.3.7V to 12V Mini DC-DC Boost Step Up Converter Board Module 5V/ 8V/ 9V 12V Output (Output set to 5V)
+7.2-Pin Mini Rocker Switch
+8.Tactile Switch Push Buttons 12mm
+9.IR LED
+10.IR Reciever
+11.20OHMS current limiting resister for IR LED
+12.1MOHMS X2 for voltage Divider
+13.0.1uf Ceramic Capacitor for singnal filtering where needed
+14.2N2222 NPN Switching Transistor for IR LED
+15.330OHMS resistor for transister
+16.Patience
+17.Wires lots and lots of wires
