@@ -1,0 +1,52 @@
+Below is an ASCII schematic of the circuit
+
+
+
++------------------------------------+
+|          3.7V 18650 Battery        |
+|       +         |          -       |
+|       |         |                  |
+|       +---------+                  |
+|       | 2-Pin Rocker Switch        |
+|       |                            |
++-------+----------------------------+
+        |
+        | TP4056 Charging Board
+        | [BAT+ to Battery +, BAT- to Battery -]
+        | [OUT+ to Boost Converter IN+, OUT- to GND]
+        |
++-------+----------------------------+
+|       DC-DC Boost Converter (5V)   |
+|       IN+ IN-  OUT+ OUT-          |
+|       |   |      |     |           |
+|       +---+      |     |           |
+|       |          |     |           |
+|       GND        |     |           |
+|                  |     |           |
++------------------+     |           |
+                         |           |
++------------------+     |           |
+|       ESP32      |     |           |
+|       [5V]-------|-----|-----------+
+|       [GND]------|-----+-----------+ GND
+|       [GPIO 21]------------------[SDA] SSD1306 OLED
+|       [GPIO 22]------------------[SCL]     [VCC]---[5V]
+|       [GPIO 25]------------------[CLK] Rotary Encoder
+|       [GPIO 26]------------------[DT]      [VCC]---[5V]
+|       [GPIO 27]------------------[SW]      [GND]---[GND]
+|       [GPIO 33]------------------[BTN1] Tactile Button
+|       [GPIO 32]------------------[BTN2]    [GND]---[GND]
+|       [GPIO 13]------------------[BTN3]
+|       [GPIO 12]------------------[BTN4]
+|       [GPIO 5]-------------------[BTN5]
+|       [GPIO 4]---[330Ω]---[B] 2N2222
+|                         [C]---[20Ω]---[IR LED]---[GND]
+|                         [E]---[GND]
+|       [GPIO 15]------------------[OUT] IR Receiver
+|                                 [VCC]---[5V]
+|                                 [GND]---[GND]
+|       [GPIO 34]------------------[Voltage Divider]
+|                                 [1MΩ]---[GND]
+|                                 [1MΩ]---[Battery +]
+|       [GPIO 2]-------------------[Onboard LED]
++------------------------------------+
