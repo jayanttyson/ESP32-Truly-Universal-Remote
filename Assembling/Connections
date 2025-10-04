@@ -1,4 +1,4 @@
-ESP32 Universal Remote Schematic
+ESP32 Universal Remote Schematic (Updated for 3.3V OLED, Encoder, IR LED)
 ==============================
 Power:
   18650 Battery (+, -)
@@ -12,11 +12,12 @@ Power:
   DC-DC Boost Converter (5V):
     [IN+] --> TP4056 [OUT+]
     [IN-] --> TP4056 [OUT-], GND
-    [OUT+] --> ESP32 [5V], OLED [VCC], Encoder [VCC], IR Receiver [VCC]
+    [OUT+] --> ESP32 [5V], IR Receiver [VCC]
     [OUT-] --> GND
 
 ESP32:
   [5V] --> DC-DC Boost [OUT+]
+  [3.3V] --> OLED [VCC], Encoder [VCC], IR LED [Anode]
   [GND] --> GND
   [GPIO 21] --> SSD1306 [SDA]
   [GPIO 22] --> SSD1306 [SCL]
@@ -36,25 +37,25 @@ ESP32:
 SSD1306 OLED:
   [SDA] --> ESP32 [GPIO 21]
   [SCL] --> ESP32 [GPIO 22]
-  [VCC] --> 5V
+  [VCC] --> ESP32 [3.3V]
   [GND] --> GND
 
 Rotary Encoder (KY-040):
   [CLK] --> ESP32 [GPIO 25]
   [DT] --> ESP32 [GPIO 26]
   [SW] --> ESP32 [GPIO 27]
-  [VCC] --> 5V
+  [VCC] --> ESP32 [3.3V]
   [GND] --> GND
 
 IR LED Circuit:
   ESP32 [GPIO 4] --> 330Ω Resistor --> 2N2222 [Base]
   2N2222 [Collector] --> 20Ω Resistor --> IR LED [Cathode]
-  IR LED [Anode] --> 5V
+  IR LED [Anode] --> ESP32 [3.3V]
   2N2222 [Emitter] --> GND
 
 IR Receiver:
   [OUT] --> ESP32 [GPIO 15]
-  [VCC] --> 5V
+  [VCC] --> DC-DC Boost [OUT+ (5V)]  // Adjust to 3.3V if needed
   [GND] --> GND
   [0.1µF Capacitor] across VCC and GND
 
