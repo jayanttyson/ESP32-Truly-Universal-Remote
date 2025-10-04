@@ -1,0 +1,52 @@
+The schematic is centered around the ESP32, with power, input, output, and sensor connections. Below is the detailed wiring:Power System:18650 Battery:Positive (+) to one terminal of the 2-Pin Rocker Switch.
+Negative (-) to TP4056 BAT- and GND (common ground).
+
+2-Pin Rocker Switch:Other terminal to TP4056 BAT+.
+
+TP4056 Charging Board:BAT+ to battery positive (via switch).
+BAT- to battery negative and GND.
+OUT+ to DC-DC Boost Converter IN+.
+OUT- to DC-DC Boost Converter IN- and GND.
+
+DC-DC Boost Converter:IN+ to TP4056 OUT+.
+IN- to TP4056 OUT- and GND.
+OUT+ (set to 5V) to ESP32 5V, OLED VCC, rotary encoder VCC, IR receiver VCC, and button pull-up power (if external pull-ups are used).
+OUT- to GND.
+
+ESP32 Connections:Power:5V to DC-DC Boost Converter OUT+.
+GND to DC-DC Boost Converter OUT- and common ground.
+
+I2C for SSD1306 OLED:GPIO 21 (SDA) to OLED SDA.
+GPIO 22 (SCL) to OLED SCL.
+OLED VCC to 5V (from boost converter).
+OLED GND to common ground.
+
+Rotary Encoder (KY-040):CLK to GPIO 25.
+DT to GPIO 26.
+SW to GPIO 27.
+VCC to 5V (from boost converter).
+GND to common ground.
+
+Tactile Buttons:Button 1 (Play/Pause): One pin to GPIO 33, other to GND (internal pull-up enabled).
+Button 2 (Volume Up): One pin to GPIO 32, other to GND.
+Button 3 (Mute): One pin to GPIO 13, other to GND.
+Button 4 (Volume Down): One pin to GPIO 12, other to GND.
+Button 5 (Record/Device Switch): One pin to GPIO 5, other to GND.
+
+IR LED Circuit:GPIO 4 to 330Ω resistor to 2N2222 Base (B).
+2N2222 Collector (C) to 20Ω resistor to IR LED Cathode (-).
+IR LED Anode (+) to 5V (from boost converter).
+2N2222 Emitter (E) to GND.
+
+IR Receiver:OUT to GPIO 15.
+VCC to 5V (from boost converter).
+GND to common ground.
+0.1µF Capacitor across VCC and GND of the IR receiver for signal filtering.
+
+Battery Monitoring (Voltage Divider):1MΩ Resistor 1: From battery positive (before switch) to GPIO 34.
+1MΩ Resistor 2: From GPIO 34 to GND.
+
+Debug LED:GPIO 2 to onboard LED (no external LED assumed, as not listed in parts).
+
+Grounding:All GND connections (battery, TP4056, boost converter, ESP32, OLED, rotary encoder, buttons, IR receiver, 2N2222, voltage divider) are tied to a common ground.
+
