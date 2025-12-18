@@ -30,7 +30,7 @@
 #include <esp_task_wdt.h>
 
 #define DECODE_HASH
-//#define DEBUG // Comment out for release build
+#define DEBUG // Comment in for serial debugging
 // Change Partition Sceheme to No OTA (2MB APP / 2MB SPIFFS)  for serial debugging 
 // ==== Battery Monitoring ====
 #define BATTERY_PIN 34
